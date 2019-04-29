@@ -16,8 +16,8 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Dao d = new Dao();
-        System.out.println(req.getParameter("name").getBytes("gbk"));
-        String name = new String(req.getParameter("name").getBytes(), "gbk");
+        req.setCharacterEncoding("utf-8");
+        String name = req.getParameter("name");
         System.out.println(name);
         String password = req.getParameter("password");
         String method = req.getParameter("method");
