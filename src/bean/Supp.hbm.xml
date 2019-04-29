@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="bean">
+    <class name="Supp" table="inventory_supp">
+        <id name="goods_name" column="goods_name">
+        </id>
+        <property name="amount" />
+        <property name="price" />
+    </class>
+     
+</hibernate-mapping>

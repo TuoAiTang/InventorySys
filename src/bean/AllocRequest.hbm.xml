@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="bean">
+    <class name="AllocRequest" table="alloc_request">
+        <id name="id" column="id">
+            <generator class="native">
+            </generator>
+        </id>
+        <property name="offline_name" />
+        <property name="goods_name" />
+        <property name="amount" />
+        <property name="date" />
+        <property name="status" />
+    </class>
+     
+</hibernate-mapping>

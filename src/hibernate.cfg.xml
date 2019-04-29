@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+       "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+ 
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/inventory_sys?characterEncoding=UTF-8</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">admin</property>
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <mapping resource="bean/Goods.hbm.xml" />
+        <mapping resource="bean/PurchaseOrder.hbm.xml" />
+        <mapping resource="bean/CustomerOrder.hbm.xml" />
+        <mapping resource="bean/User.hbm.xml" />
+        <mapping resource="bean/WareHouse.hbm.xml" />
+        <mapping resource="bean/RunningTally.hbm.xml"/>
+        <mapping resource="bean/Store.hbm.xml"/>
+        <mapping resource="bean/Supp.hbm.xml"/>
+        <mapping resource="bean/AllocRequest.hbm.xml"/>
+    </session-factory>
+ 
+</hibernate-configuration>

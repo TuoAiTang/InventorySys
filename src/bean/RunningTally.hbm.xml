@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="bean">
+    <class name="RunningTally" table="running_tally">
+        <id name="id" column="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="type" />
+        <property name="amount" />
+        <property name="order_id" />
+        <property name="date" />
+    </class>
+     
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="bean">
+    <class name="PurchaseOrder" table="purchase_order">
+        <id name="id" column="id">
+            <generator class="native">
+            </generator>
+        </id>
+        <property name="goods_name" />
+        <property name="amount" />
+        <property name="date" />
+        <property name="money" />
+        <property name="status" />
+    </class>
+     
+</hibernate-mapping>

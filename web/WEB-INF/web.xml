@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>servlet.UserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/User.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Customer</servlet-name>
+        <servlet-class>servlet.Customer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Customer</servlet-name>
+        <url-pattern>/Customer.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Accountant</servlet-name>
+        <servlet-class>servlet.Accountant</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Accountant</servlet-name>
+        <url-pattern>/Accountant.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Manager</servlet-name>
+        <servlet-class>servlet.Manager</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Manager</servlet-name>
+        <url-pattern>/Manager.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Purchase</servlet-name>
+        <servlet-class>servlet.Purchase</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Purchase</servlet-name>
+        <url-pattern>/Purchase.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Offline</servlet-name>
+        <servlet-class>servlet.Offline</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Offline</servlet-name>
+        <url-pattern>/Offline.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Supplier</servlet-name>
+        <servlet-class>servlet.Supplier</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Supplier</servlet-name>
+        <url-pattern>/Supplier.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Marketing</servlet-name>
+        <servlet-class>servlet.Marketing</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Marketing</servlet-name>
+        <url-pattern>/Marketing.do</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>
