@@ -14,7 +14,7 @@ public class ut {
     public static String GOODS_NAME_ERROR = "<div style='color:red'>失败：输入的商品名称有误</div>\n" +
             "<a href=# style='color:blue'>返回</a>";
     public static String SOLVE_SUCCESS = "<div style='color:red'>发货成功</div>\n" +
-            "<div style='color:blue'>正在返回...</div>";
+            "<a href=Supplier.do?method=order style='color:blue'>返回</a>";
     public static String ORDER_ERROR = "<div style='color:red'>订单不存在</div>\n" +
             "<div style='color:blue'>返回...</div>";
     public static int getType(String type){

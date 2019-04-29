@@ -7,6 +7,9 @@ public class RunningTally {
     private int order_id;
     private String date;
 
+    public RunningTally() {
+    }
+
     public RunningTally(int id, int type, double amount, int order_id, String date) {
         this.id = id;
         this.type = type;
