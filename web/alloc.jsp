@@ -1,11 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: M
+  Date: 2019/4/21
+  Time: 11:49
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"
-         language="java" import="bean.*, util.ut" isELIgnored="false" %>
-<%@ page import="java.util.List" %>
-<%  response.setCharacterEncoding("UTF-8");
-    response.setContentType("text/html;charset=UTF-8");
-    request.setCharacterEncoding("UTF-8");
-%>
+         language="java" import="bean.User, util.ut" isELIgnored="false" %>
+
+
 <html>
 
 <head>
@@ -48,7 +52,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="home.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>首页</span></a>
         </li>
@@ -284,6 +288,8 @@
                         </div>
                     </li>
 
+
+
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
@@ -333,22 +339,26 @@
 
                         <!-- Project Card Example -->
                         <i class="fas fa-fw fa-table"></i>
-                        <span style="font-size: 2.0em; color: #000055;">确认下单</span>
+                        <span style="font-size: 2.0em; color: #000055;">填写申请单</span>
                         <br><br>
-                        <% request.setCharacterEncoding("utf-8");%>
-                        <% String goods_name = request.getParameter("goods_name");%>
-                        <div class="card shadow mb-4">
-                            <form class="form-horizontal" action="Customer.do?method=place_order&&goods_name=<%=goods_name%>" method="post">
+                        <div class="card shadow col-lg-12 mb-4">
+                            <form class="form-horizontal" action="Offline.do?method=submit" method="post">
+                                <br>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">商品名称</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">选择</label>
                                     <div class="col-sm-10">
-                                        <input type="email" id="disabledInput" class="form-control" placeholder="<%=goods_name%>" disabled>
+                                        <select name="goods_name" class="custom-select">
+                                            <option selected>商品名称</option>
+                                            <c:forEach items="${warehouses}" var="w" varStatus="st">
+                                                <option value="${w.goods_name}">${w.goods_name}</option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">商品数量</label>
                                     <div class="col-sm-10">
-                                        <input name="amount" class="form-control" placeholder="输入你要买的数量">
+                                        <input name="amount" class="form-control" placeholder="输入你要申请的数量">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -375,7 +385,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="submit" class="btn btn-primary" style="float: right;">
-                                            确认下单
+                                            确认申请
                                         </button>
                                         <br><br>
                                     </div>

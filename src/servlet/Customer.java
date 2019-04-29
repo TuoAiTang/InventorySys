@@ -22,7 +22,7 @@ public class Customer  extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter pw = resp.getWriter();
-
+        req.setCharacterEncoding("utf-8");
         int auth = u.getType();
         if(auth != User.CUSTOMER){
             pw.println(ut.AUTH_ERROR);
@@ -49,6 +49,7 @@ public class Customer  extends HttpServlet {
         //without cast, jsp can not read
         List<Object> objects = d.all("WareHouse");
         List<WareHouse> wareHouses = new ArrayList<>();
+
         for(Object o : objects)
             wareHouses.add((WareHouse) o);
 

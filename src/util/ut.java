@@ -9,10 +9,14 @@ public class ut {
             "<a href=index.jsp style='color:blue'>重新登陆</a>";
     public static String REGISTER_ERROR = "<div style='color:red'>账号已经存在</div>\n" +
             "<a href=index.jsp style='color:blue'>登陆</a>";
-    public static String AMOUNT_ERROR = "<div style='color:red'>下单失败：输入的数量超过了库存</div>\n" +
+    public static String AMOUNT_ERROR = "<div style='color:red'>失败：输入的数量超过了库存</div>\n" +
+            "<a href=# style='color:blue'>返回</a>";
+    public static String GOODS_NAME_ERROR = "<div style='color:red'>失败：输入的商品名称有误</div>\n" +
             "<a href=# style='color:blue'>返回</a>";
     public static String SOLVE_SUCCESS = "<div style='color:red'>发货成功</div>\n" +
             "<div style='color:blue'>正在返回...</div>";
+    public static String ORDER_ERROR = "<div style='color:red'>订单不存在</div>\n" +
+            "<div style='color:blue'>返回...</div>";
     public static int getType(String type){
         int t = 0;
         switch (type){

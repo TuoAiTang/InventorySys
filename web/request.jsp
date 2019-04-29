@@ -1,13 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"
-         language="java" import="bean.*, util.ut" isELIgnored="false" %>
-<%@ page import="java.util.List" %>
-<%  response.setCharacterEncoding("UTF-8");
-    response.setContentType("text/html;charset=UTF-8");
-    request.setCharacterEncoding("UTF-8");
-%>
-<html>
+         language="java" import="bean.User" isELIgnored="false" %>
 
+<html>
 <head>
 
     <meta charset="utf-8">
@@ -174,7 +169,6 @@
         </li>
 
 
-
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -333,54 +327,40 @@
 
                         <!-- Project Card Example -->
                         <i class="fas fa-fw fa-table"></i>
-                        <span style="font-size: 2.0em; color: #000055;">确认下单</span>
+                        <span style="font-size: 2.0em; color: #000055;">我的申请</span>
                         <br><br>
-                        <% request.setCharacterEncoding("utf-8");%>
-                        <% String goods_name = request.getParameter("goods_name");%>
+
                         <div class="card shadow mb-4">
-                            <form class="form-horizontal" action="Customer.do?method=place_order&&goods_name=<%=goods_name%>" method="post">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">商品名称</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" id="disabledInput" class="form-control" placeholder="<%=goods_name%>" disabled>
-                                    </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                        <tr>
+                                            <th>订单编号</th>
+                                            <th>申请状态</th>
+                                            <th>门店</th>
+                                            <th>商品名称</th>
+                                            <th>商品件数</th>
+                                            <th>订单日期</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <c:forEach items="${ars}" var="ar" varStatus="st">
+                                            <tr>
+                                                <td>${ar.id}</td>
+                                                <td>${ar.status}</td>
+                                                <td>${ar.offline_name}</td>
+                                                <td>${ar.goods_name}</td>
+                                                <td>${ar.amount}</td>
+                                                <td>${ar.date}</td>
+                                            </tr>
+                                        </c:forEach>
+
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">商品数量</label>
-                                    <div class="col-sm-10">
-                                        <input name="amount" class="form-control" placeholder="输入你要买的数量">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
-                                    <div class="col-sm-10">
-                                        <input name="address" class="form-control" id="inputEmail3" placeholder="Address">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-2 control-label">手机号码</label>
-                                    <div class="col-sm-10">
-                                        <input name="tel_number" class="form-control" id="inputPassword3" placeholder="Tel number">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> 尽快发货
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-primary" style="float: right;">
-                                            确认下单
-                                        </button>
-                                        <br><br>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
 
                     </div>

@@ -87,6 +87,17 @@ public class Dao {
         return objects;
     }
 
+    public List<Object> allInorder(String classname, String propertyName){
+        s.beginTransaction();
+
+        String sql = "from " + classname + " x order by x." + propertyName;
+        Query q = s.createQuery(sql);
+        List<Object> objects = q.list();
+
+        s.getTransaction().commit();
+        return objects;
+    }
+
     public int getCount(String classname, String propertyName, String key){
         s.beginTransaction();
 

@@ -336,6 +336,7 @@
                         <span style="font-size: 2.0em; color: #000055;">确认下单</span>
                         <br><br>
                         <%
+
                             String goods_name = request.getParameter("goods_name");
                             double price = Double.parseDouble(request.getParameter("price"));
                         %>
