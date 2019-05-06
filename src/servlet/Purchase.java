@@ -123,10 +123,16 @@ public class Purchase  extends HttpServlet {
 
         //增加库存
         List<Object> objects2 = d.allEq("WareHouse", "goods_name", pod.getGoods_name());
-        int inventAmount = ((WareHouse)objects2.get(0)).getAmount();
-        WareHouse wh = (WareHouse)d.allEq("WareHouse", "goods_name", pod.getGoods_name()).get(0);
-        wh.setAmount(inventAmount + pod.getAmount());
-        d.update(wh);
+        /*暂时不存在该商品*/
+        if(objects2 == null || objects2.isEmpty()){
+            WareHouse wh = new WareHouse(pod.getGoods_name(), pod.getAmount(), ut.getWareHouse());
+            d.add(wh);
+        }else{
+            int inventAmount = ((WareHouse)objects2.get(0)).getAmount();
+            WareHouse wh = (WareHouse)d.allEq("WareHouse", "goods_name", pod.getGoods_name()).get(0);
+            wh.setAmount(inventAmount + pod.getAmount());
+            d.update(wh);
+        }
 
         //更新订单状态
         pod.setStatus("已签收");
