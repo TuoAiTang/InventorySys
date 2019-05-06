@@ -2,6 +2,10 @@
 
 ## 进销存管理系统
 
+## 体验地址
+[——>>戳这里](http://123.207.163.104/Inventory/)
+预览
+![预览](https://raw.github.com/TuoAiTang/repositpry/master/InventorySys/img-folder/test.jpg)
 ## 主要模块
 
 1. 顾客模块
